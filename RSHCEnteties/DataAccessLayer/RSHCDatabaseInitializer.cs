@@ -9,7 +9,7 @@ using RSHCEnteties;
 
 namespace RSHCEnteties.DataAccessLayer
 {
-    internal class RSHCDatabaseInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<RSHCDatabaseContext>
+    public class RSHCDatabaseInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<RSHCDatabaseContext>
     {
         protected override void Seed(RSHCDatabaseContext context)
         {
