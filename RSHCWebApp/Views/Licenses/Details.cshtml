@@ -1,0 +1,74 @@
+﻿@model RSHCEnteties.License
+
+@{
+    Layout = null;
+    ViewBag.Title = "License Details";
+}
+
+<!DOCTYPE html>
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>@ViewBag.Title</h2>
+                <ol>
+                    <li>@Html.ActionLink("RSHC Demo", "Index", "Home", new { area = "" }, new { @class = "logo me-auto me-lg-0" })</li>
+                    <li>@ViewBag.Title</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+        <div class="container">
+            <div>
+                <h4>License</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Person.LastName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Person.LastName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Jurisdiction)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Jurisdiction)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.License1)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.License1)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+    </section>
+
+</main><!-- End #main -->

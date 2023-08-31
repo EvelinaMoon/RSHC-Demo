@@ -1,0 +1,57 @@
+﻿@model RSHCWebApp.Models.ExternalLoginConfirmationViewModel
+@{
+    ViewBag.Title = "Register";
+}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>@ViewBag.Title</h2>
+                <ol>
+                    <li>@Html.ActionLink("RSHC Demo", "Index", "Home", new { area = "" }, new { @class = "logo me-auto me-lg-0" })</li>
+                    <li>@ViewBag.Title</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+        <div class="container">
+            <h3>Associate your @ViewBag.LoginProvider account.</h3>
+
+            @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <h4>Association Form</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <p class="text-info">
+                    You've successfully authenticated with <strong>@ViewBag.LoginProvider</strong>.
+                    Please enter a user name for this site below and click the Register button to finish
+                    logging in.
+                </p>
+                <div class="row">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 col-form-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-md-2 col-md-10">
+                        <input type="submit" class="btn btn-outline-dark" value="Register" />
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+</main><!-- End #main -->
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
