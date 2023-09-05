@@ -302,6 +302,14 @@
     <Compile Include="Migrations\202309051832132_5-9-2023.designer.cs">
       <DependentUpon>202309051832132_5-9-2023.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309052038016_05-09-2023-DateTimeUpdated.cs" />
+    <Compile Include="Migrations\202309052038016_05-09-2023-DateTimeUpdated.designer.cs">
+      <DependentUpon>202309052038016_05-09-2023-DateTimeUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309052041357_05-09-2023-AddedIdentityRoles.cs" />
+    <Compile Include="Migrations\202309052041357_05-09-2023-AddedIdentityRoles.designer.cs">
+      <DependentUpon>202309052041357_05-09-2023-AddedIdentityRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="LiteraEnteties\OfficeLocation.cs" />
     <Compile Include="LiteraEnteties\Person.cs" />
@@ -317,6 +325,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202309051832132_5-9-2023.resx">
       <DependentUpon>202309051832132_5-9-2023.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309052038016_05-09-2023-DateTimeUpdated.resx">
+      <DependentUpon>202309052038016_05-09-2023-DateTimeUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309052041357_05-09-2023-AddedIdentityRoles.resx">
+      <DependentUpon>202309052041357_05-09-2023-AddedIdentityRoles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

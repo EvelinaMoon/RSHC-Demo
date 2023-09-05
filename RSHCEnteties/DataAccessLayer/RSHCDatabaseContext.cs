@@ -26,6 +26,7 @@ namespace RSHCEnteties.DataAccessLayer
 
         public virtual DbSet<IdentityUserLogin> IdentityUserLogins { get; set; }
         public virtual DbSet<IdentityUserRole> IdentityUserRoles { get; set; }
+        public virtual DbSet<IdentityRole> IdentityRoles { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
