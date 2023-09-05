@@ -11,6 +11,8 @@ using System.Data.Common;
 using System.Data.Entity.ModelConfiguration;
 using System.Reflection.Emit;
 
+using Microsoft.AspNet.Identity.EntityFramework;
+
 namespace RSHCEnteties.DataAccessLayer
 {
     public class RSHCDatabaseContext: DbContext
@@ -20,6 +22,11 @@ namespace RSHCEnteties.DataAccessLayer
         public virtual DbSet<OfficeLocation> OfficeLocations { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
         public virtual DbSet<License> Licenses { get; set; }
+        public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
+        public virtual DbSet<IdentityUserLogin> IdentityUserLogins { get; set; }
+        public virtual DbSet<IdentityUserRole> IdentityUserRoles { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -29,6 +36,24 @@ namespace RSHCEnteties.DataAccessLayer
             ConfigurePersonsLiteraTable (modelBuilder.Entity<Person>());
             ConfigureLicensesLiteraTable (modelBuilder.Entity<License>());
 
+            ConfigureIdentityUserLoginTable(modelBuilder.Entity<IdentityUserLogin>());
+            ConfigureIdentityUserRoleTable(modelBuilder.Entity<IdentityUserRole>());
+            ConfigureApplicationUserTable(modelBuilder.Entity<ApplicationUser>());
+        }
+
+        private void ConfigureIdentityUserRoleTable(EntityTypeConfiguration<IdentityUserRole> modelBuilder)
+        {
+            modelBuilder.HasKey(buildAction => buildAction.UserId);
+        }
+
+        private void ConfigureIdentityUserLoginTable(EntityTypeConfiguration<IdentityUserLogin> modelBuilder)
+        {
+            modelBuilder.HasKey(buildAction => buildAction.UserId);
+        }
+
+        private void ConfigureApplicationUserTable(EntityTypeConfiguration<ApplicationUser> modelBuilder)
+        {
+            modelBuilder.HasKey(e => e.Id);
         }
 
         private void ConfigureOfficeLocationsLiteraTable(EntityTypeConfiguration<OfficeLocation> modelBuilder)

@@ -21,6 +21,7 @@ using SendGrid.Helpers.Mail;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
+using RSHCEnteties;
 
 namespace RSHCWebApp
 {

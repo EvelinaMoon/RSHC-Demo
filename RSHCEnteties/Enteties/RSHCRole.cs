@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNet.Identity;
 using System.Net.NetworkInformation;
 
-namespace RSHCWebApp.Models
+namespace RSHCEnteties
 {
-    public enum RSHCRoles
+    public enum RSHCRole
     {
         Admin = 1,       // Manage everything
         Manager = 2,     // Manage most aspects of the site

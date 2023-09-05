@@ -21,10 +21,11 @@ namespace RSHCWebApp
             // Configure the db context, user manager and signin manager to use a single instance per request
             //app.CreatePerOwinContext(ApplicationDbContext.Create);
             //app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-            Database.SetInitializer(new RSHCDatabaseInitializer());
+            // Database.SetInitializer(new RSHCDatabaseInitializer());
             // Configure the db context, user manager and signin manager to use a single instance per request
+            Database.SetInitializer(new RSHCDatabaseInitializer());
             app.CreatePerOwinContext(() => new RSHCDatabaseContext());
-
+            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
 
             // Enable the application to use a cookie to store information for the signed in user

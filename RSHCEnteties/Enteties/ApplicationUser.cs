@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace RSHCWebApp.Models
+namespace RSHCEnteties
 {
      public class ApplicationUser : IdentityUser
     {
@@ -23,9 +23,9 @@ namespace RSHCWebApp.Models
 
         public DateTime AdmittedIn { get; set; }
 
-        public DateTime AdmittedOut { get; set; }
+        public DateTime? AdmittedOut { get; set; }
 
-        public RSHCRoles UserRole { get; set; } 
+        public RSHCRole UserRole { get; set; } 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
