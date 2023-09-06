@@ -31,7 +31,7 @@ namespace RSHCWebApp
         {
             var apiKey = ConfigurationManager.AppSettings["SendGridKey"];
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("EZaslavsky@rshc-law.com", "Evelina Zaslavsky");
+            var from = new EmailAddress("EZaslavsky@rshc-law.com", "RSHC");
             var subject = message.Subject;
             var to = new EmailAddress(message.Destination);
             var plainTextContent = message.Body;

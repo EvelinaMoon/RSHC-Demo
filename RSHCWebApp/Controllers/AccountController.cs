@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using RSHCWebApp.Models;
 using RSHCEnteties;
+using RSHCManager;
 
 namespace RSHCWebApp.Controllers
 {
@@ -20,14 +21,20 @@ namespace RSHCWebApp.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        private SendGridManager _sendGridManager;
+
+
         public AccountController()
         {
+            _sendGridManager = new SendGridManager();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
+
+            _sendGridManager = new SendGridManager();
         }
 
         public ApplicationSignInManager SignInManager
@@ -181,7 +188,10 @@ namespace RSHCWebApp.Controllers
 
                         string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                         var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                        await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                        //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                        SendGridTemplateIdentityMessage message = new SendGridTemplateIdentityMessage { Confirmation_url = callbackUrl, Destination = user.Email, FirstName = user.FirstName, LastName = user.LastName, Subject = "Confirm your registration" };   
+                        await _sendGridManager.configSendGridTemplateasync(message);
 
                         return RedirectToAction("Index", "Home");
                     }
