@@ -437,6 +437,7 @@
     <Content Include="Views\Licenses\Edit.cshtml" />
     <Content Include="Views\Licenses\Index.cshtml" />
     <Content Include="Views\Shared\InnerPageTemplate.cshtml" />
+    <Content Include="Views\Shared\UnderConstruction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

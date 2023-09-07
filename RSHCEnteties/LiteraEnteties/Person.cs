@@ -43,6 +43,7 @@ namespace RSHCEnteties
         [StringLength(255)]
         public string Initials { get; set; }
 
+        [Display(Name = "Office Location")]
         public int? OfficeID { get; set; }
 
         [StringLength(255)]

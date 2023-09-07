@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<RSHCEnteties.License>
 
 @{
-    Layout = null;
-    @ViewBag.Title = "Lisenses";
+    ViewBag.Title = "Lisenses";
 }
 
 <!DOCTYPE html>
@@ -27,7 +26,7 @@
     <section class="inner-page">
         <div class="container">
             <p>
-                @Html.ActionLink("Create New", "Create")
+                @Html.ActionLink("Create New", "Create", new {area = ""}, new {@class = "btn btn-outline-dark" })
             </p>
             <table class="table">
                 <tr>

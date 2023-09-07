@@ -19,6 +19,7 @@ namespace RSHCEnteties
         [StringLength(255)]
         public string Jurisdiction { get; set; }
 
+        [Display(Name = "License")]
         [Column("License")]
         [StringLength(255)]
         public string License1 { get; set; }

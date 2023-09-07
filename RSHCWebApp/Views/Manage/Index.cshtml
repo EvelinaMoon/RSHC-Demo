@@ -77,8 +77,8 @@
                                 using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { role = "form" }))
                                 {
                                     @Html.AntiForgeryToken()
-                                    <text>Enabled
-                                        <input type="submit" value="Disable" class="btn btn-link" />
+                                    <text>Enabled &nbsp; &nbsp;
+                                        <input type="submit" value="Disable" class="btn btn-outline-dark" />
                                     </text>
                                 }
                             }
@@ -87,8 +87,8 @@
                                 using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { role = "form" }))
                                 {
                                     @Html.AntiForgeryToken()
-                                    <text>Disabled
-                                        <input type="submit" value="Enable" class="btn btn-link" />
+                                    <text>Disabled &nbsp; &nbsp;
+                                        <input type="submit" value="Enable" class="btn btn-outline-dark" />
                                     </text>
                                 }
                             }
@@ -97,4 +97,6 @@
                     </dd>
                 </dl>
             </div>
+        </div>
+    </section>
 </main>
