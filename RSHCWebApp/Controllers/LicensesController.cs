@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -27,12 +28,19 @@ namespace RSHCWebApp.Controllers
         {
             if (id == null)
             {
+                Trace.TraceError("Received an empty id for Licenses/Details");
+
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             License license = db.Licenses.Find(id);
             if (license == null)
             {
-                return HttpNotFound();
+                Trace.TraceError("Failed to locate  " + id + " in Licenses/Details");
+
+                //HttpNotFoundResult doesn't render a view.
+                //return HttpNotFound();
+
+                throw new HttpException(404, "Not found");
             }
             return View(license);
         }
@@ -67,12 +75,19 @@ namespace RSHCWebApp.Controllers
         {
             if (id == null)
             {
+                Trace.TraceError("Received an empty id for Licenses/Edit");
+
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             License license = db.Licenses.Find(id);
             if (license == null)
             {
-                return HttpNotFound();
+                Trace.TraceError("Failed to locate  " + id + " in Licenses/Edit");
+
+                //HttpNotFoundResult doesn't render a view.
+                //return HttpNotFound();
+
+                throw new HttpException(404, "Not found");
             }
             ViewBag.OwnerID = new SelectList(db.Persons, "UserID", "LastName", license.OwnerID);
             return View(license);
@@ -100,12 +115,19 @@ namespace RSHCWebApp.Controllers
         {
             if (id == null)
             {
+                Trace.TraceError("Received an empty id for Licenses/Delete");
+
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             License license = db.Licenses.Find(id);
             if (license == null)
             {
-                return HttpNotFound();
+                Trace.TraceError("Failed to locate  " + id + " in Licenses/Delete");
+
+                //HttpNotFoundResult doesn't render a view.
+                //return HttpNotFound();
+
+                throw new HttpException(404, "Not found");
             }
             return View(license);
         }
