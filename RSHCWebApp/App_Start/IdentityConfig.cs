@@ -29,8 +29,9 @@ namespace RSHCWebApp
     {
         private async Task configSendGridasync(IdentityMessage message)
         {
-            var apiKey = ConfigurationManager.AppSettings["SendGridKey"];
-            var client = new SendGridClient(apiKey);
+            // var apiKey = ConfigurationManager.AppSettings["SendGridKey"];
+            string SendGridApiKey = Environment.GetEnvironmentVariable("SendGridKey");
+            var client = new SendGridClient(SendGridApiKey);
             var from = new EmailAddress("EZaslavsky@rshc-law.com", "RSHC");
             var subject = message.Subject;
             var to = new EmailAddress(message.Destination);
@@ -61,9 +62,13 @@ namespace RSHCWebApp
         public Task SendAsync(IdentityMessage message)
         {
             // Twilio Begin
-            var accountSid = ConfigurationManager.AppSettings["TwilioSMSAccountIdentification"];
-            var authToken = ConfigurationManager.AppSettings["TwilioSMSAccountPassword"];
-            var fromNumber = ConfigurationManager.AppSettings["TwilioSMSAccountFrom"];
+            //var accountSid = ConfigurationManager.AppSettings["TwilioSMSAccountIdentification"];
+            //var authToken = ConfigurationManager.AppSettings["TwilioSMSAccountPassword"];
+            //var fromNumber = ConfigurationManager.AppSettings["TwilioSMSAccountFrom"];
+
+            string accountSid = Environment.GetEnvironmentVariable("TwilioSMSAccountIdentification");
+            string authToken = Environment.GetEnvironmentVariable("TwilioSMSAccountPassword");
+            string fromNumber = Environment.GetEnvironmentVariable("TwilioSMSAccountFrom");
 
             TwilioClient.Init(accountSid, authToken);
 

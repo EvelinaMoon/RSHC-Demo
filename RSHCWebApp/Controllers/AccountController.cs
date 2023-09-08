@@ -190,8 +190,8 @@ namespace RSHCWebApp.Controllers
                         var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
 
                         //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                        SendGridTemplateIdentityMessage message = new SendGridTemplateIdentityMessage { Confirmation_url = callbackUrl, Destination = user.Email, FirstName = user.FirstName, LastName = user.LastName, Subject = "Confirm your registration" };   
-                        await _sendGridManager.configSendGridTemplateasync(message);
+                        SendGridTemplateIdentityMessage message = new SendGridTemplateIdentityMessage { CallbackUrl = callbackUrl, Destination = user.Email, FirstName = user.FirstName, LastName = user.LastName};   
+                        await _sendGridManager.configSendGridTemplateasync(message, SendGridTemplateType.ConfirmYourAccount);
 
                         return RedirectToAction("Index", "Home");
                     }
@@ -265,7 +265,11 @@ namespace RSHCWebApp.Controllers
 
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                //await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                SendGridTemplateIdentityMessage message = new SendGridTemplateIdentityMessage { CallbackUrl = callbackUrl, Destination = user.Email, FirstName = user.FirstName, LastName = user.LastName};
+                await _sendGridManager.configSendGridTemplateasync(message, SendGridTemplateType.ResetPassword );
+
                 return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
@@ -460,8 +464,12 @@ namespace RSHCWebApp.Controllers
             string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
             var callbackUrl = Url.Action("ConfirmEmail", "Account",
                new { userId = userID, code = code }, protocol: Request.Url.Scheme);
-            await UserManager.SendEmailAsync(userID, subject,
-               "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+            //await UserManager.SendEmailAsync(userID, subject,
+            //   "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+
+            SendGridTemplateIdentityMessage message = new SendGridTemplateIdentityMessage { CallbackUrl = callbackUrl};
+            await _sendGridManager.configSendGridTemplateasync(message, SendGridTemplateType.ConfirmEmail);
 
             return callbackUrl;
         }

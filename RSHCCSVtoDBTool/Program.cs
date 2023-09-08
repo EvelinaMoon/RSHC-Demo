@@ -73,7 +73,7 @@ namespace ConsoleApp1
                 "Data Source=rshc-production.database.windows.net;" +
                 "Initial Catalog=rshc-shared;" +
                 "User id=rshc-production-server-admin;" +
-                "Password=7d&0g@D*G5qg;";
+                "Password=;";
                 conn.Open();
 
                 using (StreamReader reader = new StreamReader(@"C:\RSHC\Flat File.csv"))
