@@ -28,13 +28,15 @@
                     @Html.AntiForgeryToken()
                     <h4>Add a phone number</h4>
                     <hr />
+                    <br />
                     @Html.ValidationSummary("", new { @class = "text-danger" })
                     <div class="row">
                         @Html.LabelFor(m => m.Number, new { @class = "col-md-2 col-form-label" })
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.TextBoxFor(m => m.Number, new { @class = "form-control" })
                         </div>
                     </div>
+                    <br />
                     <div class="row">
                         <div class="offset-md-2 col-md-10">
                             <input type="submit" class="btn btn-outline-dark" value="Submit" />
@@ -42,6 +44,12 @@
                     </div>
                 }
             </p>
+
+            <br />
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
         </div>
     </section>
 

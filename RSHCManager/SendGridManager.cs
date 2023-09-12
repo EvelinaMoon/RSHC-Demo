@@ -12,6 +12,7 @@ using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
 using System.Linq.Expressions;
+using Newtonsoft.Json;
 
 namespace RSHCManager
 {
@@ -25,36 +26,38 @@ namespace RSHCManager
     {
         public SendGridManager() { }
 
-        public async Task configSendGridTemplateasync(SendGridTemplateIdentityMessage message, SendGridTemplateType type)
+        public async Task configSendGridTemplateasync(SendGridTemplateMessage message, SendGridTemplateType type)
         {
             string SendGridApiKey = Environment.GetEnvironmentVariable("SendGridKey");
             var client = new SendGridClient(SendGridApiKey);
 
-            var msg = new SendGridMessage();
-            msg.SetFrom(new EmailAddress("EZaslavsky@rshc-law.com", "RSHC"));
-            msg.AddTo(new EmailAddress(message.Destination));
+            string TemplateId;
 
+            //msg.SetFrom(new EmailAddress("EZaslavsky@rshc-law.com", "RSHC"));
+            //msg.AddTo(new EmailAddress(message.Destination));
+           
 
             switch (type)
             {
                 case SendGridTemplateType.ConfirmYourAccount:
-                    msg.SetTemplateId("d-6f8e51678a3c43f0a516b94b7612ad8a");
-                    message.Subject = "Confirm your registration";
+                    TemplateId = "d-6f8e51678a3c43f0a516b94b7612ad8a";
                     break;
                 case SendGridTemplateType.ConfirmEmail:
-                    msg.SetTemplateId("d-7644de9f97d14e139a4744b457ac4495");
-                    message.Subject = "Confirm your Email";
+                    TemplateId = "d-7644de9f97d14e139a4744b457ac4495";              
                     break;
                 case SendGridTemplateType.ResetPassword:
-                    msg.SetTemplateId("d-ed4ac927a2f5459fb966cde0a5895b80");
-                    message.Subject = "Reset Password";
+                    TemplateId = "d-ed4ac927a2f5459fb966cde0a5895b80";             
                     break;
                 default :
+                    TemplateId = "";
                     Trace.TraceError("Failed to locate an email template " + message.Destination);
                     await Task.FromResult(0);
                     break;
             }
 
+            var msg = MailHelper.CreateSingleTemplateEmail(new EmailAddress("EZaslavsky@rshc-law.com", "RSHC"), new EmailAddress(message.Destination), TemplateId, message);
+
+            //  string strJson = JsonSerializer.Serialize<SendGridTemplateIdentityMessage>(message);
 
             var response = await client.SendEmailAsync(msg);
 
@@ -69,10 +72,12 @@ namespace RSHCManager
     }
 
 
-    public class SendGridTemplateIdentityMessage : IdentityMessage
+    public class SendGridTemplateMessage
     {
         public string CallbackUrl { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Destination { get; set; }
+        public string Subject { get; set; }
     }
 }

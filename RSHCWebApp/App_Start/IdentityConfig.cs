@@ -22,6 +22,7 @@ using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
 using RSHCEnteties;
+using System.Web.Mvc;
 
 namespace RSHCWebApp
 {
@@ -70,18 +71,32 @@ namespace RSHCWebApp
             string authToken = Environment.GetEnvironmentVariable("TwilioSMSAccountPassword");
             string fromNumber = Environment.GetEnvironmentVariable("TwilioSMSAccountFrom");
 
-            TwilioClient.Init(accountSid, authToken);
 
-            MessageResource result = MessageResource.Create(
-            new PhoneNumber(message.Destination),
-            from: new PhoneNumber(fromNumber),
-            body: message.Body
-            );
+            try
+            {
 
-            //Status is one of Queued, Sending, Sent, Failed or null if the number is not valid
-            Trace.TraceInformation(result.Status.ToString());
-            //Twilio doesn't currently have an async API, so return success.
-            return Task.FromResult(0);
+                TwilioClient.Init(accountSid, authToken);
+
+                MessageResource result = MessageResource.Create(
+                new PhoneNumber(message.Destination),
+                from: new PhoneNumber(fromNumber),
+                body: message.Body
+                );
+
+                //Status is one of Queued, Sending, Sent, Failed or null if the number is not valid
+                Trace.TraceInformation(result.Status.ToString());
+
+                //Twilio doesn't currently have an async API, so return success.
+                return Task.FromResult(0);
+            }
+            catch (Exception e)
+            {
+                //  Block of code to handle errorsChange your account settings
+                Trace.TraceError($"Failed to send message: {e}");
+                return Task.FromException(e);
+            }
+            
+           
             // Twilio End
         }
     }
@@ -120,6 +135,8 @@ namespace RSHCWebApp
             manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
             manager.MaxFailedAccessAttemptsBeforeLockout = 5;
 
+
+             
             // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
             // You can write your own provider and plug it in here.
             manager.RegisterTwoFactorProvider("Phone Code", new PhoneNumberTokenProvider<ApplicationUser>
