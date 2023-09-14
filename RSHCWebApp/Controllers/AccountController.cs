@@ -466,9 +466,9 @@ namespace RSHCWebApp.Controllers
                new { userId = userID, code = code }, protocol: Request.Url.Scheme);
             //await UserManager.SendEmailAsync(userID, subject,
             //   "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+            var user = UserManager.FindById(userID);
 
-
-            SendGridTemplateMessage message = new SendGridTemplateMessage { CallbackUrl = callbackUrl, Subject = "Confirm Email" };
+            SendGridTemplateMessage message = new SendGridTemplateMessage { CallbackUrl = callbackUrl, Destination = user.Email, Subject = "Confirm Email" };
             await _sendGridManager.configSendGridTemplateasync(message, SendGridTemplateType.ConfirmEmail);
 
             return callbackUrl;

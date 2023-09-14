@@ -12,6 +12,7 @@ using System.Data.Entity.ModelConfiguration;
 using System.Reflection.Emit;
 
 using Microsoft.AspNet.Identity.EntityFramework;
+using RSHCEnteties.Enteties;
 
 namespace RSHCEnteties.DataAccessLayer
 {
@@ -29,6 +30,15 @@ namespace RSHCEnteties.DataAccessLayer
         public virtual DbSet<IdentityRole> IdentityRoles { get; set; }
 
 
+        public virtual DbSet<RSHCDevice> RSHCDevice { get; set; }
+        public virtual DbSet<RSHCEmployee> RSHCEmployee { get; set; }
+        public virtual DbSet<RSHCDeviceAssigment> RSHCDeviceAssigment { get; set; }
+
+
+        public virtual DbSet<RSHCOnBoarding> RSHCOnBoarding { get; set; }
+        public virtual DbSet<RSHCOffBoarding> RSHCOffBoarding { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
            base.OnModelCreating(modelBuilder);
@@ -40,6 +50,45 @@ namespace RSHCEnteties.DataAccessLayer
             ConfigureIdentityUserLoginTable(modelBuilder.Entity<IdentityUserLogin>());
             ConfigureIdentityUserRoleTable(modelBuilder.Entity<IdentityUserRole>());
             ConfigureApplicationUserTable(modelBuilder.Entity<ApplicationUser>());
+
+            ConfigureRSHCDeviceTable(modelBuilder.Entity<RSHCDevice>());
+
+            ConfigureRSHCEmployeeTable(modelBuilder.Entity<RSHCEmployee>());
+
+            ConfigureRSHCDeviceAssigmentTable(modelBuilder.Entity<RSHCDeviceAssigment>());
+
+            ConfigureRSHCOnBoardingTable(modelBuilder.Entity<RSHCOnBoarding>());
+            ConfigureRSHCOffBoardingTable(modelBuilder.Entity<RSHCOffBoarding>());
+        }
+
+        private void ConfigureRSHCOnBoardingTable(EntityTypeConfiguration<RSHCOnBoarding> modelBuilder)
+        {
+            modelBuilder.HasKey(buildAction => buildAction.ID);
+            modelBuilder.HasRequired(r => r.RSHCEmployee).WithMany().HasForeignKey(k => k.RSHCEmployeeId);
+        }
+
+        private void ConfigureRSHCOffBoardingTable(EntityTypeConfiguration<RSHCOffBoarding> modelBuilder)
+        {
+            modelBuilder.HasKey(buildAction => buildAction.ID);
+            modelBuilder.HasRequired(r => r.RSHCEmployee).WithMany().HasForeignKey(k => k.RSHCEmployeeId);
+        }
+
+        private void ConfigureRSHCDeviceAssigmentTable(EntityTypeConfiguration<RSHCDeviceAssigment> modelBuilder)
+        {
+            modelBuilder.HasKey(buildAction => buildAction.ID);
+            modelBuilder.HasRequired(r => r.RSHCDevice).WithMany().HasForeignKey(k => k.RSHCDeviceId);
+            modelBuilder.HasRequired(r => r.RSHCEmployee).WithMany().HasForeignKey(k => k.RSHCEmployeeId);
+        }
+
+        private void ConfigureRSHCEmployeeTable(EntityTypeConfiguration<RSHCEmployee> modelBuilder)
+        {
+            modelBuilder.HasKey(buildAction => buildAction.ID);
+            modelBuilder.HasRequired(r => r.OfficeLocation).WithMany().HasForeignKey(k => k.OfficeLocationID);
+        }
+
+        private void ConfigureRSHCDeviceTable(EntityTypeConfiguration<RSHCDevice> modelBuilder)
+        {
+            modelBuilder.HasKey(buildAction => buildAction.ID);               
         }
 
         private void ConfigureIdentityUserRoleTable(EntityTypeConfiguration<IdentityUserRole> modelBuilder)

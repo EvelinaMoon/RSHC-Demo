@@ -6,6 +6,7 @@
 
 <!DOCTYPE html>
 
+
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -26,9 +27,14 @@
     <section class="inner-page">
         <div class="container">
             <p>
-                @Html.ActionLink("Create New", "Create", new {area = ""}, new {@class = "btn btn-outline-dark" })
+                @Html.ActionLink("Create New", "Create", new { area = "" }, new { @class = "btn btn-outline-dark" })
             </p>
-            <table class="table">
+            <table class="table" id="table" data-show-columns="true"
+                   data-search="true"
+                   data-show-toggle="true"
+                   data-pagination="true"
+                   data-url="json/data1.json"
+                   data-resizable="true">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.Person.LastName)
@@ -73,3 +79,4 @@
     </section>
 
 </main><!-- End #main -->
+

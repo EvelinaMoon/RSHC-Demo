@@ -296,6 +296,11 @@
     <Compile Include="DataAccessLayer\RSHCDatabaseContext.cs" />
     <Compile Include="DataAccessLayer\RSHCDatabaseInitializer.cs" />
     <Compile Include="Enteties\ApplicationUser.cs" />
+    <Compile Include="Enteties\RSHCDevice.cs" />
+    <Compile Include="Enteties\RSHCEmployee.cs" />
+    <Compile Include="Enteties\RSHCDeviceAssigment.cs" />
+    <Compile Include="Enteties\RSHCOffBoarding.cs" />
+    <Compile Include="Enteties\RSHCOnBoarding.cs" />
     <Compile Include="Enteties\RSHCRole.cs" />
     <Compile Include="LiteraEnteties\License.cs" />
     <Compile Include="Migrations\202309051832132_5-9-2023.cs" />
@@ -309,6 +314,14 @@
     <Compile Include="Migrations\202309052041357_05-09-2023-AddedIdentityRoles.cs" />
     <Compile Include="Migrations\202309052041357_05-09-2023-AddedIdentityRoles.designer.cs">
       <DependentUpon>202309052041357_05-09-2023-AddedIdentityRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309142031583_RSHC Device added.cs" />
+    <Compile Include="Migrations\202309142031583_RSHC Device added.designer.cs">
+      <DependentUpon>202309142031583_RSHC Device added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309142057302_RSHC Boarding added.cs" />
+    <Compile Include="Migrations\202309142057302_RSHC Boarding added.designer.cs">
+      <DependentUpon>202309142057302_RSHC Boarding added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="LiteraEnteties\OfficeLocation.cs" />
@@ -331,6 +344,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309052041357_05-09-2023-AddedIdentityRoles.resx">
       <DependentUpon>202309052041357_05-09-2023-AddedIdentityRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309142031583_RSHC Device added.resx">
+      <DependentUpon>202309142031583_RSHC Device added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309142057302_RSHC Boarding added.resx">
+      <DependentUpon>202309142057302_RSHC Boarding added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
