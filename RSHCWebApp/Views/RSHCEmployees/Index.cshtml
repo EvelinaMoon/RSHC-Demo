@@ -1,0 +1,112 @@
+﻿@model IEnumerable<RSHCEnteties.Enteties.RSHCEmployee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OfficeLocation.OfficeValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Initials)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrivateEMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RSHCEMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmittedIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmittedOut)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfficeLocation.OfficeValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Initials)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivateEMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RSHCEMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmittedIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmittedOut)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

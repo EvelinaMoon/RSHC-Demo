@@ -193,6 +193,11 @@
     <Compile Include="Controllers\LicensesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\RSHCDeviceAssigmentsController.cs" />
+    <Compile Include="Controllers\RSHCDevicesController.cs" />
+    <Compile Include="Controllers\RSHCEmployeesController.cs" />
+    <Compile Include="Controllers\RSHCOffBoardingsController.cs" />
+    <Compile Include="Controllers\RSHCOnBoardingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -439,6 +444,31 @@
     <Content Include="Views\Shared\InnerPageTemplate.cshtml" />
     <Content Include="Views\Shared\UnderConstruction.cshtml" />
     <Content Include="Views\Shared\Error404.cshtml" />
+    <Content Include="Views\RSHCOnBoardings\Create.cshtml" />
+    <Content Include="Views\RSHCOnBoardings\Delete.cshtml" />
+    <Content Include="Views\RSHCOnBoardings\Details.cshtml" />
+    <Content Include="Views\RSHCOnBoardings\Edit.cshtml" />
+    <Content Include="Views\RSHCOnBoardings\Index.cshtml" />
+    <Content Include="Views\RSHCOffBoardings\Create.cshtml" />
+    <Content Include="Views\RSHCOffBoardings\Delete.cshtml" />
+    <Content Include="Views\RSHCOffBoardings\Details.cshtml" />
+    <Content Include="Views\RSHCOffBoardings\Edit.cshtml" />
+    <Content Include="Views\RSHCOffBoardings\Index.cshtml" />
+    <Content Include="Views\RSHCDevices\Create.cshtml" />
+    <Content Include="Views\RSHCDevices\Delete.cshtml" />
+    <Content Include="Views\RSHCDevices\Details.cshtml" />
+    <Content Include="Views\RSHCDevices\Edit.cshtml" />
+    <Content Include="Views\RSHCDevices\Index.cshtml" />
+    <Content Include="Views\RSHCDeviceAssigments\Create.cshtml" />
+    <Content Include="Views\RSHCDeviceAssigments\Delete.cshtml" />
+    <Content Include="Views\RSHCDeviceAssigments\Details.cshtml" />
+    <Content Include="Views\RSHCDeviceAssigments\Edit.cshtml" />
+    <Content Include="Views\RSHCDeviceAssigments\Index.cshtml" />
+    <Content Include="Views\RSHCEmployees\Create.cshtml" />
+    <Content Include="Views\RSHCEmployees\Delete.cshtml" />
+    <Content Include="Views\RSHCEmployees\Details.cshtml" />
+    <Content Include="Views\RSHCEmployees\Edit.cshtml" />
+    <Content Include="Views\RSHCEmployees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

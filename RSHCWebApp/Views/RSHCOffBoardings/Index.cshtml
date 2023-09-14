@@ -1,0 +1,244 @@
+﻿@model IEnumerable<RSHCEnteties.Enteties.RSHCOffBoarding>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RSHCEmployee.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OffBoardingStarted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OffBoardingCompleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoardingStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RSHCDevicesReturned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.O365WipeMobileDevices)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.O365PasswordChanged)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.O365ForceLogout)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.O365ClearContactInfo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.O365AddTerminatedTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.O365RemoveFromGroups)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.O365SetAutoreply)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.O365SetHideFromGAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetDoctsCheckInAllDocs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetDocUserGUIDToWorksheet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetDocCheckDeletedDocuments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetDoCloseAuthorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetDocCheckPersonalMatter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetDocDeleteMobileDevice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetDocTermUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdobeAcrobatDeleteUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FaxPlusDeleteUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NordLayerDeleteUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ITimekeepDeleteUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SharefileDisableAccount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SharefileLicensed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SharefileRemoveLicense)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SharefileFoldersToSupport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZoomForwardToReception)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PCWiped)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KeycardsPhysicallyDisable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChicagoInformBuilding)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PSTArchiveContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PSTSavedToPSTOrNAS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.O365ZoomDeleteUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeleteO365ZoomUserBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RSHCEmployee.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OffBoardingStarted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OffBoardingCompleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BoardingStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RSHCDevicesReturned)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.O365WipeMobileDevices)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.O365PasswordChanged)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.O365ForceLogout)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.O365ClearContactInfo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.O365AddTerminatedTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.O365RemoveFromGroups)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.O365SetAutoreply)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.O365SetHideFromGAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetDoctsCheckInAllDocs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetDocUserGUIDToWorksheet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetDocCheckDeletedDocuments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetDoCloseAuthorID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetDocCheckPersonalMatter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetDocDeleteMobileDevice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetDocTermUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdobeAcrobatDeleteUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FaxPlusDeleteUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NordLayerDeleteUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ITimekeepDeleteUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SharefileDisableAccount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SharefileLicensed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SharefileRemoveLicense)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SharefileFoldersToSupport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZoomForwardToReception)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PCWiped)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KeycardsPhysicallyDisable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChicagoInformBuilding)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PSTArchiveContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PSTSavedToPSTOrNAS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.O365ZoomDeleteUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeleteO365ZoomUserBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

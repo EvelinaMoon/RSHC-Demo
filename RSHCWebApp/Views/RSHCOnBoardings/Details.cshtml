@@ -1,0 +1,515 @@
+﻿@model RSHCEnteties.Enteties.RSHCOnBoarding
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RSHCOnBoarding</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RSHCEmployee.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RSHCEmployee.UserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnBoardingStarted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnBoardingStarted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnBoardingCompleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnBoardingCompleted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoardingStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoardingStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerialNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComputerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComputerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RSHCAssetTag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RSHCAssetTag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateAdminaccount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateAdminaccount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TurnOffFeatures)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TurnOffFeatures)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Win10EnterpriseKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Win10EnterpriseKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SettingsUpdateGiveMe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SettingsUpdateGiveMe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Win10Updated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Win10Updated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckForUpdates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckForUpdates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NonSurfaceUpdates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NonSurfaceUpdates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddAppsAccount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddAppsAccount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrivateNetworkAllowSharing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrivateNetworkAllowSharing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Office64Bit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Office64Bit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcrobatDC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcrobatDC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CiscoUmbrellaCertificate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CiscoUmbrellaCertificate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chrome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chrome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Firefox)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Firefox)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ETranscriptViewer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ETranscriptViewer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VLCViewer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VLCViewer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MSVisualStudioRuntime2010)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MSVisualStudioRuntime2010)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MSVisualC4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MSVisualC4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChangePro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChangePro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Metadact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metadact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LiteraMetadact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LiteraMetadact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocXLitera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocXLitera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractCompanionLitera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractCompanionLitera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NDOffice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NDOffice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NDClickChromeExtension)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NDClickChromeExtension)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ndMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ndMail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Meraki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meraki)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogMeInClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogMeInClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SophosReboot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SophosReboot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrivacyScreen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrivacyScreen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProtectiveCase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProtectiveCase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SetTimeZone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SetTimeZone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JoinAzureAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JoinAzureAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginUserPIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginUserPIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternetTurnOffTLS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternetTurnOffTLS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrowserTurnOffPasswordSaving)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrowserTurnOffPasswordSaving)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SetDefaultApps)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SetDefaultApps)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisableOneDrive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisableOneDrive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NetDocsRegistryKeys)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NetDocsRegistryKeys)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NDOfficeIDStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NDOfficeIDStamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LiteraSetMetadact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LiteraSetMetadact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BackBitLockerAzureKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BackBitLockerAzureKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutlookTurnOffAutocomplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutlookTurnOffAutocomplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcrobatSetPDF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcrobatSetPDF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZoomLogInUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZoomLogInUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AttorneyiTimekeep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AttorneyiTimekeep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddZebsOfficeTemplates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddZebsOfficeTemplates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutlookSignaturee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutlookSignaturee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddXerox)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddXerox)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CopyMoveFiles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CopyMoveFiles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutlookActivateSignature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutlookActivateSignature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddPrinters)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddPrinters)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CitrixClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CitrixClient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SevenZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SevenZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZoomClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZoomClient)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

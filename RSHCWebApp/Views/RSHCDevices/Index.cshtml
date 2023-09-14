@@ -1,0 +1,82 @@
+﻿@model IEnumerable<RSHCEnteties.Enteties.RSHCDevice>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeviceStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RAM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SSDSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComputerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeviceStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RAM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SSDSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComputerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

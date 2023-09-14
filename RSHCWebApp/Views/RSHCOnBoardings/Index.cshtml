@@ -1,0 +1,400 @@
+﻿@model IEnumerable<RSHCEnteties.Enteties.RSHCOnBoarding>
+
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RSHCEmployee.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OnBoardingStarted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OnBoardingCompleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoardingStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComputerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RSHCAssetTag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateAdminaccount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TurnOffFeatures)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Win10EnterpriseKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SettingsUpdateGiveMe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Win10Updated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckForUpdates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NonSurfaceUpdates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddAppsAccount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrivateNetworkAllowSharing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Office64Bit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcrobatDC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CiscoUmbrellaCertificate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chrome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Firefox)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ETranscriptViewer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VLCViewer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MSVisualStudioRuntime2010)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MSVisualC4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChangePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Metadact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LiteraMetadact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocXLitera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractCompanionLitera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NDOffice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NDClickChromeExtension)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ndMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meraki)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LogMeInClient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SophosReboot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrivacyScreen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProtectiveCase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SetTimeZone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoinAzureAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoginUserPIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InternetTurnOffTLS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrowserTurnOffPasswordSaving)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SetDefaultApps)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisableOneDrive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NetDocsRegistryKeys)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NDOfficeIDStamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LiteraSetMetadact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BackBitLockerAzureKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutlookTurnOffAutocomplete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcrobatSetPDF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZoomLogInUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AttorneyiTimekeep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddZebsOfficeTemplates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutlookSignaturee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddXerox)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopyMoveFiles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutlookActivateSignature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddPrinters)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CitrixClient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SevenZip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZoomClient)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RSHCEmployee.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OnBoardingStarted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OnBoardingCompleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BoardingStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComputerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RSHCAssetTag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateAdminaccount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TurnOffFeatures)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Win10EnterpriseKey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SettingsUpdateGiveMe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Win10Updated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckForUpdates)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NonSurfaceUpdates)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddAppsAccount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivateNetworkAllowSharing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Office64Bit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcrobatDC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CiscoUmbrellaCertificate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chrome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Firefox)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ETranscriptViewer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VLCViewer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MSVisualStudioRuntime2010)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MSVisualC4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChangePro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Metadact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LiteraMetadact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocXLitera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractCompanionLitera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NDOffice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NDClickChromeExtension)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ndMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meraki)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LogMeInClient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SophosReboot)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivacyScreen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProtectiveCase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SetTimeZone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JoinAzureAD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoginUserPIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InternetTurnOffTLS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrowserTurnOffPasswordSaving)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SetDefaultApps)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisableOneDrive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NetDocsRegistryKeys)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NDOfficeIDStamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LiteraSetMetadact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BackBitLockerAzureKey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutlookTurnOffAutocomplete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcrobatSetPDF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZoomLogInUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AttorneyiTimekeep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddZebsOfficeTemplates)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutlookSignaturee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddXerox)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopyMoveFiles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutlookActivateSignature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddPrinters)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CitrixClient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SevenZip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZoomClient)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
