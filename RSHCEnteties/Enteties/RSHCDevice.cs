@@ -25,6 +25,7 @@ namespace RSHCEnteties.Enteties
         public string ComputerName { get; set; }
         public DateTime? BuildDate { get; set; }
         public string Notes { get; set; }
+        public string PathToImage { get; set; }
 
 
         public virtual ICollection<RSHCDeviceAssigment> DeviceAssigment { get; set; }

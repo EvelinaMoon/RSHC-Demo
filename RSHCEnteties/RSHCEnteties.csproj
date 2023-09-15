@@ -323,6 +323,10 @@
     <Compile Include="Migrations\202309142057302_RSHC Boarding added.designer.cs">
       <DependentUpon>202309142057302_RSHC Boarding added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309142123124_RSHC Path to image added.cs" />
+    <Compile Include="Migrations\202309142123124_RSHC Path to image added.designer.cs">
+      <DependentUpon>202309142123124_RSHC Path to image added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="LiteraEnteties\OfficeLocation.cs" />
     <Compile Include="LiteraEnteties\Person.cs" />
@@ -350,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309142057302_RSHC Boarding added.resx">
       <DependentUpon>202309142057302_RSHC Boarding added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309142123124_RSHC Path to image added.resx">
+      <DependentUpon>202309142123124_RSHC Path to image added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

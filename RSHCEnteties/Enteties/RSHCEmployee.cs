@@ -57,6 +57,7 @@ namespace RSHCEnteties.Enteties
         public DateTime? AdmittedIn { get; set; }
 
         public DateTime? AdmittedOut { get; set; }
+        public string PathToImage { get; set; }
 
 
 
