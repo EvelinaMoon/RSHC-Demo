@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace RSHCEnteties.Enteties
 {
     public class RSHCOffBoarding
@@ -20,11 +21,14 @@ namespace RSHCEnteties.Enteties
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [Display(Name = "Off Boarding Started")]
         public DateTime? OffBoardingStarted { get; set; }
-        [Display(Name = "Off Boarding Started")]
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [Display(Name = "Off Boarding Complited")]
         public DateTime? OffBoardingCompleted { get; set; }
 
+        [Display(Name = "Off Boarding Status")]
         public RSHCBoardingStatus BoardingStatus { get; set; }
 
         // This will be recognized as FK by NavigationPropertyNameForeignKeyDiscoveryConvention
@@ -97,7 +101,8 @@ namespace RSHCEnteties.Enteties
         [Display(Name = "O365/Zoom Delete user (staff = 1mon, atty = 6 mon)")]
         public bool O365ZoomDeleteUser { get; set; } = false;
 
-        [Display(Name = @"Delete O365/Zoom User By")]
+        [Display(Name = @"Delete O365/Zoom User By Following Date")]
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public DateTime? DeleteO365ZoomUserBy { get; set; }
     }
 

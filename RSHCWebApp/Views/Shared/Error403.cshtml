@@ -1,7 +1,7 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 
 @{
-    ViewBag.Title = "Error404";
+    ViewBag.Title = "Error403";
 }
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@
                 @{
                     if (String.IsNullOrEmpty(ViewBag.errorMessage))
                     {
-                                <h2 class="text-danger">An error occurred while processing your request. The resource you are looking for may removed had its name changed or is temporarily unavailable</h2>
+                        <h2 class="text-danger">No access</h2>
                     }
                     else
                     {

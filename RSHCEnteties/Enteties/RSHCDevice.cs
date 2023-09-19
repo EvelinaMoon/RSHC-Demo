@@ -23,6 +23,7 @@ namespace RSHCEnteties.Enteties
         public string RAM { get; set; }
         public string SSDSize { get; set; }
         public string ComputerName { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public DateTime? BuildDate { get; set; }
         public string Notes { get; set; }
         public string PathToImage { get; set; }

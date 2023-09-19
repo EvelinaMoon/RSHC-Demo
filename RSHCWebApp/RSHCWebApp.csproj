@@ -469,6 +469,7 @@
     <Content Include="Views\RSHCEmployees\Details.cshtml" />
     <Content Include="Views\RSHCEmployees\Edit.cshtml" />
     <Content Include="Views\RSHCEmployees\Index.cshtml" />
+    <Content Include="Views\Shared\Error403.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

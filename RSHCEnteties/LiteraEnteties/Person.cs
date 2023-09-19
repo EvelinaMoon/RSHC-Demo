@@ -57,14 +57,17 @@ namespace RSHCEnteties
         public string Title { get; set; }
 
         [StringLength(255)]
+        [DataType(System.ComponentModel.DataAnnotations.DataType.PhoneNumber)]
         public string Phone { get; set; }
 
         [StringLength(255)]
         public string Fax { get; set; }
 
         [StringLength(255)]
+        [DataType(System.ComponentModel.DataAnnotations.DataType.EmailAddress)]
         public string EMail { get; set; }
 
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public DateTime? AdmittedIn { get; set; }
 
         public virtual OfficeLocation OfficeLocation { get; set; }

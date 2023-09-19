@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace RSHCEnteties.Enteties
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public DateTime AssignedDate { get; set; }
         public AssigmentStatus Status { get; set; }
         public string Notes { get; set; }

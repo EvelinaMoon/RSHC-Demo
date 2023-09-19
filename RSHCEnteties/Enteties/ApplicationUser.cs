@@ -21,8 +21,10 @@ namespace RSHCEnteties
         [StringLength(255)]
         public string MiddleName { get; set; }
 
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public DateTime AdmittedIn { get; set; }
 
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public DateTime? AdmittedOut { get; set; }
 
         public RSHCRole UserRole { get; set; } 

@@ -26,8 +26,10 @@ namespace RSHCEnteties.Enteties
         public int ID { get; set; }
 
         // General info
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [Display(Name = "On Boarding Started")]
         public DateTime? OnBoardingStarted { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [Display(Name = "On Boarding Completed")]
         public DateTime? OnBoardingCompleted { get; set; }
         [Display(Name = "Serial Number")]
@@ -37,7 +39,7 @@ namespace RSHCEnteties.Enteties
         public int RSHCEmployeeId { get; set; }
         public virtual RSHCEmployee RSHCEmployee { get; set; }
 
-
+        [Display(Name = "On Boarding Status")]
         public RSHCBoardingStatus BoardingStatus { get; set; }
 
         // Check points

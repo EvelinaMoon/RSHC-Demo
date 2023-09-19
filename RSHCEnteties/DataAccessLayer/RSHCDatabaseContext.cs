@@ -123,7 +123,7 @@ namespace RSHCEnteties.DataAccessLayer
         private void ConfigurePersonsLiteraTable(EntityTypeConfiguration<Person> modelBuilder)
         {
             modelBuilder
-            .Property(e => e.UserID)
+                   .Property(e => e.UserID)
                    .IsUnicode(false);
 
             modelBuilder
@@ -135,7 +135,7 @@ namespace RSHCEnteties.DataAccessLayer
                 .IsUnicode(false);
 
             modelBuilder
-            .Property(e => e.MI)
+                .Property(e => e.MI)
                 .IsUnicode(false);
 
             modelBuilder

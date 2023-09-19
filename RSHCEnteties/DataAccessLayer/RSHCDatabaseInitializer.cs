@@ -9,11 +9,12 @@ using RSHCEnteties;
 
 namespace RSHCEnteties.DataAccessLayer
 {
-    public class RSHCDatabaseInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<RSHCDatabaseContext>
+    public class RSHCDatabaseInitializer : System.Data.Entity.CreateDatabaseIfNotExists<RSHCDatabaseContext>
     {
         protected override void Seed(RSHCDatabaseContext context)
         {
             //var licenses = new List<License>
+
             //{ 
             //    new License{OwnerID = "", Description = "", Jurisdiction = "", License1 = "", },
             //    new License{OwnerID = "", Description = "", Jurisdiction = "", License1 = "", },

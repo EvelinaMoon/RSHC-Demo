@@ -42,7 +42,7 @@
                     <th>
                         @Html.DisplayNameFor(model => model.BoardingStatus)
                     </th>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.SerialNumber)
                     </th>
                     <th>
@@ -215,7 +215,7 @@
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.ZoomClient)
-                    </th>
+                    </th>*@
                     <th></th>
                 </tr>
 
@@ -234,7 +234,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.BoardingStatus)
                         </td>
-                        <td>
+                        @*<td>
                             @Html.DisplayFor(modelItem => item.SerialNumber)
                         </td>
                         <td>
@@ -407,7 +407,7 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.ZoomClient)
-                        </td>
+                        </td>*@
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                             @Html.ActionLink("Details", "Details", new { id = item.ID }) |

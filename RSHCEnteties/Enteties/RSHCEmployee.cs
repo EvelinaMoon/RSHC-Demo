@@ -45,16 +45,20 @@ namespace RSHCEnteties.Enteties
         public RSHCTitle Title { get; set; }
 
         [StringLength(255)]
+        [DataType(System.ComponentModel.DataAnnotations.DataType.PhoneNumber)]
         public string Phone { get; set; }
 
 
         [StringLength(255)]
+        [DataType(System.ComponentModel.DataAnnotations.DataType.EmailAddress)]
         public string PrivateEMail { get; set; }
 
         [StringLength(255)]
+        [DataType(System.ComponentModel.DataAnnotations.DataType.EmailAddress)]
         public string RSHCEMail { get; set; }
-
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public DateTime? AdmittedIn { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
 
         public DateTime? AdmittedOut { get; set; }
         public string PathToImage { get; set; }
