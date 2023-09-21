@@ -142,6 +142,7 @@ namespace ConsoleApp1
                         }
 
                         lineNumber++;
+                        Console.WriteLine(lineNumber);
                     }
                 }
 

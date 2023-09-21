@@ -26,7 +26,8 @@ namespace RSHCWebApp
                       "~/RshcCustomTheme/vendor/boxicons/css/boxicons.min.css",
                       "~/RshcCustomTheme/vendor/glightbox/css/glightbox.min.css",
                       "~/RshcCustomTheme/vendor/remixicon/remixicon.css",
-                      "~/RshcCustomTheme/vendor/swiper/swiper-bundle.min.css"));
+                      "~/RshcCustomTheme/vendor/swiper/swiper-bundle.min.css",
+                      "~/bootstrap-table-master/dist/bootstrap-table.min.css"));
 
             bundles.Add(new Bundle("~/bundles/rshcthemescripts").Include(
                        "~/RshcCustomTheme/vendor/aos/aos.js",
@@ -36,7 +37,11 @@ namespace RSHCWebApp
                        "~/RshcCustomTheme/vendor/swiper/swiper-bundle.min.js",
                        "~/RshcCustomTheme/vendor/purecounter/purecounter_vanilla.js",
                        "~/RshcCustomTheme/vendor/php-email-form/validate.js",
-                       "~/RshcCustomTheme/js/main.js"));
+                       "~/RshcCustomTheme/js/main.js",
+                       "~/bootstrap-table-master/tableExport.min.js",
+                       "~/bootstrap-table-master/dist/bootstrap-table.min.js",
+                       "~/bootstrap-table-master/dist/bootstrap-table-locale-all.min.js",
+                       "~/bootstrap-table-master/dist/extensions/export/bootstrap-table-export.min.js"));
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));

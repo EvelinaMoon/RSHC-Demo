@@ -23,6 +23,19 @@ namespace RSHCWebApp.Controllers
             return View(persons.ToList());
         }
 
+        public ActionResult TableTest()
+        {
+
+            var persons = db.Persons.Include(p => p.OfficeLocation);
+            return View(persons.ToList());
+        }
+
+        public ActionResult GetTableTestData()
+        {
+
+            return View();
+        }
+
         // GET: Person/Details/5
         public ActionResult Details(int id)
         {
