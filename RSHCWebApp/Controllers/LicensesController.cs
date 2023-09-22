@@ -12,6 +12,7 @@ using RSHCEnteties.DataAccessLayer;
 
 namespace RSHCWebApp.Controllers
 {
+    [Authorize]
     public class LicensesController : Controller
     {
         private RSHCDatabaseContext db = new RSHCDatabaseContext();

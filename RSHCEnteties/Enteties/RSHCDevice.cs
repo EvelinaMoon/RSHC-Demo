@@ -13,19 +13,24 @@ namespace RSHCEnteties.Enteties
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-
-          
+        [Required]
+        public string Name { get; set; }
+        [Display(Name = "Serial Number")]
         public string SerialNumber { get; set; }
         public RSHCDeviceStatus DeviceStatus { get; set; }
 
         public string Brand { get; set; }
         public string Model { get; set; }
         public string RAM { get; set; }
+        [Display(Name = "SSD Size")]
         public string SSDSize { get; set; }
+        [Display(Name = "Computer Name")]
         public string ComputerName { get; set; }
+        [Display(Name = "Build Date")]
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         public DateTime? BuildDate { get; set; }
         public string Notes { get; set; }
+        [Display(Name = "Path To Image")]
         public string PathToImage { get; set; }
 
 

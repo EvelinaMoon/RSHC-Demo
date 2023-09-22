@@ -30,9 +30,9 @@
             </p>
             <table class="table">
                 <tr>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.OfficeLocation.OfficeValue)
-                    </th>
+                    </th>*@
                     <th>
                         @Html.DisplayNameFor(model => model.UserID)
                     </th>
@@ -42,7 +42,7 @@
                     <th>
                         @Html.DisplayNameFor(model => model.FirstName)
                     </th>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.MI)
                     </th>
                     <th>
@@ -53,34 +53,34 @@
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Initials)
-                    </th>
+                    </th>*@
                     <th>
                         @Html.DisplayNameFor(model => model.Title)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Phone)
                     </th>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.PrivateEMail)
-                    </th>
+                    </th>*@
                     <th>
                         @Html.DisplayNameFor(model => model.RSHCEMail)
                     </th>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.AdmittedIn)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.AdmittedOut)
-                    </th>
+                    </th>*@
                     <th></th>
                 </tr>
 
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>
+                        @*<td>
                             @Html.DisplayFor(modelItem => item.OfficeLocation.OfficeValue)
-                        </td>
+                        </td>*@
                         <td>
                             @Html.DisplayFor(modelItem => item.UserID)
                         </td>
@@ -90,7 +90,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.FirstName)
                         </td>
-                        <td>
+                        @*<td>
                             @Html.DisplayFor(modelItem => item.MI)
                         </td>
                         <td>
@@ -101,25 +101,25 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Initials)
-                        </td>
+                        </td>*@
                         <td>
                             @Html.DisplayFor(modelItem => item.Title)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Phone)
                         </td>
-                        <td>
+                        @*<td>
                             @Html.DisplayFor(modelItem => item.PrivateEMail)
-                        </td>
+                        </td>*@
                         <td>
                             @Html.DisplayFor(modelItem => item.RSHCEMail)
                         </td>
-                        <td>
+                        @*<td>
                             @Html.DisplayFor(modelItem => item.AdmittedIn)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.AdmittedOut)
-                        </td>
+                        </td>*@
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                             @Html.ActionLink("Details", "Details", new { id = item.ID }) |

@@ -21,18 +21,21 @@ namespace RSHCEnteties.Enteties
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
+        [Required]
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
-        [Display(Name = "Off Boarding Started")]
+        [Display(Name = "Offboarding Started")]
+
         public DateTime? OffBoardingStarted { get; set; }
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
-        [Display(Name = "Off Boarding Complited")]
+        [Display(Name = "Offboarding Complited")]
         public DateTime? OffBoardingCompleted { get; set; }
 
-        [Display(Name = "Off Boarding Status")]
+        [Display(Name = "Offboarding Status")]
         public RSHCBoardingStatus BoardingStatus { get; set; }
 
         // This will be recognized as FK by NavigationPropertyNameForeignKeyDiscoveryConvention
         [ForeignKey("RSHCEmployee")]
+        [Required]
         public int RSHCEmployeeId { get; set; }
         public virtual RSHCEmployee RSHCEmployee { get; set; }
 

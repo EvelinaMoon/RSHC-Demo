@@ -12,6 +12,7 @@ using RSHCEnteties.Enteties;
 
 namespace RSHCWebApp.Controllers
 {
+    [Authorize]
     public class RSHCOnBoardingsController : Controller
     {
         private RSHCDatabaseContext db = new RSHCDatabaseContext();

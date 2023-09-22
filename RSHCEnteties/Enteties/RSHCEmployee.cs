@@ -14,25 +14,27 @@ namespace RSHCEnteties.Enteties
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
-       
+        [Required]
         [StringLength(255)]
+        [Display(Name = "User ID")]
         public string UserID { get; set; }
 
+        [Display(Name = "Last Name")]
         [Required]
         [StringLength(255)]
         public string LastName { get; set; }
-
+        [Display(Name = "First Name")]
         [Required]
         [StringLength(255)]
         public string FirstName { get; set; }
 
         [StringLength(255)]
         public string MI { get; set; }
-
+        [Display(Name = "Display Name")]
         [Required]
         [StringLength(255)]
         public string DisplayName { get; set; }
-
+        [Display(Name = "Full Name")]
         [StringLength(255)]
         public string FullName { get; set; }
 
@@ -48,23 +50,25 @@ namespace RSHCEnteties.Enteties
         [DataType(System.ComponentModel.DataAnnotations.DataType.PhoneNumber)]
         public string Phone { get; set; }
 
-
+        [Display(Name = "Private eMail")]
         [StringLength(255)]
         [DataType(System.ComponentModel.DataAnnotations.DataType.EmailAddress)]
         public string PrivateEMail { get; set; }
-
+        [Display(Name = "RSHC eMail")]
         [StringLength(255)]
         [DataType(System.ComponentModel.DataAnnotations.DataType.EmailAddress)]
         public string RSHCEMail { get; set; }
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [Display(Name = "Admitted In")]
         public DateTime? AdmittedIn { get; set; }
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
-
+        [Display(Name = "Admitted Out")]
         public DateTime? AdmittedOut { get; set; }
+        [Display(Name = "Path To Image")]
         public string PathToImage { get; set; }
 
 
-
+        [Required]
         [Display(Name = "Office Location")]
         [ForeignKey("OfficeLocation")]
         public int? OfficeLocationID { get; set; }

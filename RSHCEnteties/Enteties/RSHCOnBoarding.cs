@@ -26,20 +26,20 @@ namespace RSHCEnteties.Enteties
         public int ID { get; set; }
 
         // General info
+        [Required]
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
-        [Display(Name = "On Boarding Started")]
+        [Display(Name = "Onboarding Started")]
         public DateTime? OnBoardingStarted { get; set; }
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
-        [Display(Name = "On Boarding Completed")]
+        [Display(Name = "Onboarding Completed")]
         public DateTime? OnBoardingCompleted { get; set; }
-        [Display(Name = "Serial Number")]
-
+        [Display(Name = "RSHC Employee Id")]
         // This will be recognized as FK by NavigationPropertyNameForeignKeyDiscoveryConvention
+        [Required]
         [ForeignKey("RSHCEmployee")]
         public int RSHCEmployeeId { get; set; }
         public virtual RSHCEmployee RSHCEmployee { get; set; }
-
-        [Display(Name = "On Boarding Status")]
+        [Display(Name = "Onboarding Status")]
         public RSHCBoardingStatus BoardingStatus { get; set; }
 
         // Check points
