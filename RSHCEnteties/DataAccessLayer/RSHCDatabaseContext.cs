@@ -38,6 +38,8 @@ namespace RSHCEnteties.DataAccessLayer
         public virtual DbSet<RSHCOnBoarding> RSHCOnBoarding { get; set; }
         public virtual DbSet<RSHCOffBoarding> RSHCOffBoarding { get; set; }
 
+        public virtual DbSet<RSHCPhone> RSHCPhone { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -59,6 +61,16 @@ namespace RSHCEnteties.DataAccessLayer
 
             ConfigureRSHCOnBoardingTable(modelBuilder.Entity<RSHCOnBoarding>());
             ConfigureRSHCOffBoardingTable(modelBuilder.Entity<RSHCOffBoarding>());
+
+            ConfigureRSHCPhoneTable(modelBuilder.Entity<RSHCPhone>());
+        }
+
+        private void ConfigureRSHCPhoneTable(EntityTypeConfiguration<RSHCPhone> modelBuilder)
+        {
+            modelBuilder.HasKey(buildAction => buildAction.ID);
+            modelBuilder.HasOptional(e => e.RSHCEmployee)
+            .WithOptionalPrincipal()
+            .Map(e => e.MapKey("RSHCEmployeeId"));
         }
 
         private void ConfigureRSHCOnBoardingTable(EntityTypeConfiguration<RSHCOnBoarding> modelBuilder)
@@ -84,6 +96,16 @@ namespace RSHCEnteties.DataAccessLayer
         {
             modelBuilder.HasKey(buildAction => buildAction.ID);
             modelBuilder.HasRequired(r => r.OfficeLocation).WithMany().HasForeignKey(k => k.OfficeLocationID);
+            modelBuilder.HasOptional(o => o.RSHCOffBoarding)
+            .WithOptionalPrincipal()
+            .Map(o => o.MapKey("RSHCOffBoardingID"));
+            modelBuilder.HasOptional(o => o.RSHCOnBoarding)
+            .WithOptionalPrincipal()
+            .Map(o => o.MapKey("RSHCOnBoardingID"));
+            modelBuilder.HasOptional(o => o.RSHCPhone)
+            .WithOptionalPrincipal()
+            .Map(o => o.MapKey("RSHCPhoneID"));
+
         }
 
         private void ConfigureRSHCDeviceTable(EntityTypeConfiguration<RSHCDevice> modelBuilder)

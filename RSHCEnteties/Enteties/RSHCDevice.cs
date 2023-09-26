@@ -15,6 +15,10 @@ namespace RSHCEnteties.Enteties
         public int ID { get; set; }
         [Required]
         public string Name { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        [Index(IsUnique = true)]
         [Display(Name = "Serial Number")]
         public string SerialNumber { get; set; }
         public RSHCDeviceStatus DeviceStatus { get; set; }

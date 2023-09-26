@@ -1,0 +1,136 @@
+﻿@model RSHCEnteties.Enteties.RSHCPhone
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>@ViewBag.Title</h2>
+                <ol>
+                    <li>@Html.ActionLink("RSHC Demo", "Index", "Home", new { area = "" }, new { @class = "logo me-auto me-lg-0" })</li>
+                    <li>@ViewBag.Title</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+        <div class="container">
+
+            <h3>Are you sure you want to delete this?</h3>
+            <div>
+                <h4>RSHCPhone</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.OfficeLocation.OfficeValue)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.OfficeLocation.OfficeValue)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Phone)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.isAssigned)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.isAssigned)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Status)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Notes)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Notes)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PreviousUsers)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PreviousUsers)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Extension)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Extension)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Tier)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Tier)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TierDepartment)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TierDepartment)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.RSHCEMail)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.RSHCEMail)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.RSHCEmployeeId)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.RSHCEmployeeId)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-outline-dark" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

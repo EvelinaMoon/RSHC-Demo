@@ -14,6 +14,7 @@ namespace RSHCEnteties.Enteties
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
+        [Index(IsUnique = true)]
         [Required]
         [StringLength(255)]
         [Display(Name = "User ID")]
@@ -53,10 +54,12 @@ namespace RSHCEnteties.Enteties
         [Display(Name = "Private eMail")]
         [StringLength(255)]
         [DataType(System.ComponentModel.DataAnnotations.DataType.EmailAddress)]
+        [Index(IsUnique = true)]
         public string PrivateEMail { get; set; }
         [Display(Name = "RSHC eMail")]
         [StringLength(255)]
         [DataType(System.ComponentModel.DataAnnotations.DataType.EmailAddress)]
+        [Index(IsUnique = true)]
         public string RSHCEMail { get; set; }
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [Display(Name = "Admitted In")]
@@ -77,8 +80,19 @@ namespace RSHCEnteties.Enteties
 
 
         public virtual ICollection<RSHCDeviceAssigment> DeviceAssigment { get; set; }
-        public virtual ICollection<RSHCOffBoarding> RSHCOffBoarding { get; set; }
-        public virtual ICollection<RSHCOnBoarding> RSHCOnBoarding { get; set; }
+
+        [Display(Name = "RSHC OffBoarding")]
+        public int? RSHCOffBoardingID { get; set; }
+        public virtual RSHCOffBoarding RSHCOffBoarding { get; set; }
+
+        [Display(Name = "RSHC OnBoarding")]
+        public int? RSHCOnBoardingID { get; set; }
+        public virtual RSHCOnBoarding RSHCOnBoarding { get; set; }
+
+
+        [Display(Name = "Office Phone")]
+        public int? RSHCPhoneID { get; set; }
+        public virtual RSHCPhone RSHCPhone { get; set; }
 
     }
 

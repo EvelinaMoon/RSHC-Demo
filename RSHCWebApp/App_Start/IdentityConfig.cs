@@ -33,7 +33,7 @@ namespace RSHCWebApp
             // var apiKey = ConfigurationManager.AppSettings["SendGridKey"];
             string SendGridApiKey = Environment.GetEnvironmentVariable("SendGridKey");
             var client = new SendGridClient(SendGridApiKey);
-            var from = new EmailAddress("EZaslavsky@rshc-law.com", "RSHC");
+            var from = new EmailAddress("service.web@rshc-law.com", "Riley Safer Holmes & Cancila");
             var subject = message.Subject;
             var to = new EmailAddress(message.Destination);
             var plainTextContent = message.Body;

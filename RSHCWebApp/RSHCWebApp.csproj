@@ -231,6 +231,7 @@
     <Compile Include="Controllers\RSHCEmployeesController.cs" />
     <Compile Include="Controllers\RSHCOffBoardingsController.cs" />
     <Compile Include="Controllers\RSHCOnBoardingsController.cs" />
+    <Compile Include="Controllers\RSHCPhonesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1258,6 +1259,11 @@
     <Content Include="Scripts\moment.min.js.map" />
     <Content Include="Scripts\moment-with-locales.min.js.map" />
     <Content Include="Views\Person\TableTest.cshtml" />
+    <Content Include="Views\RSHCPhones\Create.cshtml" />
+    <Content Include="Views\RSHCPhones\Delete.cshtml" />
+    <Content Include="Views\RSHCPhones\Details.cshtml" />
+    <Content Include="Views\RSHCPhones\Edit.cshtml" />
+    <Content Include="Views\RSHCPhones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

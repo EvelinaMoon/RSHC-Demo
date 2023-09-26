@@ -55,7 +55,7 @@ namespace RSHCManager
                     break;
             }
 
-            var msg = MailHelper.CreateSingleTemplateEmail(new EmailAddress("EZaslavsky@rshc-law.com", "RSHC"), new EmailAddress(message.Destination), TemplateId, message);
+            var msg = MailHelper.CreateSingleTemplateEmail(new EmailAddress("service.web@rshc-law.com", "Riley Safer Holmes & Cancila"), new EmailAddress(message.Destination), TemplateId, message);
 
             //  string strJson = JsonSerializer.Serialize<SendGridTemplateIdentityMessage>(message);
 
