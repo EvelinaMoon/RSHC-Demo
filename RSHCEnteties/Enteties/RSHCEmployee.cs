@@ -63,9 +63,11 @@ namespace RSHCEnteties.Enteties
         public string RSHCEMail { get; set; }
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [Display(Name = "Admitted In")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? AdmittedIn { get; set; }
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [Display(Name = "Admitted Out")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? AdmittedOut { get; set; }
         [Display(Name = "Path To Image")]
         public string PathToImage { get; set; }

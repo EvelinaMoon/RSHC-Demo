@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using RSHCEnteties.DataAccessLayer;
 using RSHCEnteties.Enteties;
+using static RSHCWebApp.Controllers.ManageController;
 
 namespace RSHCWebApp.Controllers
 {
@@ -53,12 +54,21 @@ namespace RSHCWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ID,OnBoardingStarted,OnBoardingCompleted,RSHCEmployeeId,BoardingStatus,SerialNumber,ComputerName,RSHCAssetTag,CreateAdminaccount,TurnOffFeatures,Win10EnterpriseKey,SettingsUpdateGiveMe,Win10Updated,CheckForUpdates,NonSurfaceUpdates,AddAppsAccount,PrivateNetworkAllowSharing,Office64Bit,AcrobatDC,CiscoUmbrellaCertificate,Chrome,Firefox,ETranscriptViewer,VLCViewer,MSVisualStudioRuntime2010,MSVisualC4,ChangePro,Metadact,LiteraMetadact,DocXLitera,ContractCompanionLitera,NDOffice,NDClickChromeExtension,ndMail,Meraki,LogMeInClient,SophosReboot,PrivacyScreen,ProtectiveCase,SetTimeZone,JoinAzureAD,LoginUserPIN,InternetTurnOffTLS,BrowserTurnOffPasswordSaving,SetDefaultApps,DisableOneDrive,NetDocsRegistryKeys,NDOfficeIDStamp,LiteraSetMetadact,BackBitLockerAzureKey,OutlookTurnOffAutocomplete,AcrobatSetPDF,ZoomLogInUser,AttorneyiTimekeep,AddZebsOfficeTemplates,OutlookSignaturee,AddXerox,CopyMoveFiles,OutlookActivateSignature,AddPrinters,CitrixClient,SevenZip,ZoomClient")] RSHCOnBoarding rSHCOnBoarding)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.RSHCOnBoarding.Add(rSHCOnBoarding);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.RSHCOnBoarding.Add(rSHCOnBoarding);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
             }
+            catch (Exception ex)
+            {
+                // If we got this far, something failed, redisplay form
+                ModelState.AddModelError("", "Failed to add new record. " + ex.Message);
+            }
+
 
             ViewBag.RSHCEmployeeId = new SelectList(db.RSHCEmployee, "ID", "UserID", rSHCOnBoarding.RSHCEmployeeId);
             return View(rSHCOnBoarding);

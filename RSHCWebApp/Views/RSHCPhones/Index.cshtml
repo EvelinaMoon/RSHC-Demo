@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <main id="main">
@@ -23,94 +23,97 @@
     </section><!-- End Breadcrumbs -->
 
     <section class="inner-page">
-        <div class="container">
-            <p>
-                @Html.ActionLink("Create New", "Create")
-            </p>
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.OfficeLocation.OfficeValue)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Phone)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.isAssigned)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Status)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Notes)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PreviousUsers)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Extension)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Tier)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.TierDepartment)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.RSHCEMail)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.RSHCEmployeeId)
-                    </th>
-                    <th></th>
-                </tr>
+        <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
 
-                @foreach (var item in Model)
-                {
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
+                <table class="table">
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.OfficeLocation.OfficeValue)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Phone)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.isAssigned)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Status)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Notes)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PreviousUsers)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Extension)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Tier)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TierDepartment)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.RSHCEMail)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.RSHCEmployeeId)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-                        </td>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.OfficeLocation.OfficeValue)
+                        </th>*@
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.RSHCEmployee.UserID)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.isAssigned)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Notes)
+                        </th>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.PreviousUsers)
+                        </th>*@
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.Extension)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Tier)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TierDepartment)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RSHCEMail)
+                        </th>
+                        <th></th>
                     </tr>
-                }
 
-            </table>
-        </div>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.OfficeLocation.OfficeValue)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RSHCEmployee.UserID)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.isAssigned)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Notes)
+                            </td>
+                            @*<td>
+                                @Html.DisplayFor(modelItem => item.PreviousUsers)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Extension)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tier)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TierDepartment)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RSHCEMail)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+        </section>
     </section>
-
 </main><!-- End #main -->

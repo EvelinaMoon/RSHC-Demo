@@ -21,7 +21,10 @@ namespace RSHCWebApp.Controllers
         public async Task<ActionResult> Index()
         {
             var rSHCPhone = db.RSHCPhone.Include(r => r.OfficeLocation);
-            return View(await rSHCPhone.ToListAsync());
+          
+            await rSHCPhone.ToListAsync();
+
+            return View(rSHCPhone);
         }
 
         // GET: RSHCPhones/Details/5
@@ -43,6 +46,7 @@ namespace RSHCWebApp.Controllers
         public ActionResult Create()
         {
             ViewBag.OfficeLocationID = new SelectList(db.OfficeLocations, "ID", "OfficeValue");
+            ViewBag.RSHCEmployeeId = new SelectList(db.RSHCEmployee, "ID", "UserID");
             return View();
         }
 
@@ -53,14 +57,23 @@ namespace RSHCWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ID,Phone,isAssigned,Status,Notes,PreviousUsers,Extension,Tier,TierDepartment,RSHCEMail,RSHCEmployeeId,OfficeLocationID")] RSHCPhone rSHCPhone)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.RSHCPhone.Add(rSHCPhone);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.RSHCPhone.Add(rSHCPhone);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                // If we got this far, something failed, redisplay form
+                ModelState.AddModelError("", "Failed to add new record. " + ex.Message);
             }
 
             ViewBag.OfficeLocationID = new SelectList(db.OfficeLocations, "ID", "OfficeValue", rSHCPhone.OfficeLocationID);
+            ViewBag.RSHCEmployeeId = new SelectList(db.RSHCEmployee, "ID", "UserID", rSHCPhone.RSHCEmployeeId);
             return View(rSHCPhone);
         }
 
@@ -77,6 +90,7 @@ namespace RSHCWebApp.Controllers
                 return HttpNotFound();
             }
             ViewBag.OfficeLocationID = new SelectList(db.OfficeLocations, "ID", "OfficeValue", rSHCPhone.OfficeLocationID);
+            ViewBag.RSHCEmployeeId = new SelectList(db.RSHCEmployee, "ID", "UserID", rSHCPhone.RSHCEmployeeId);
             return View(rSHCPhone);
         }
 
@@ -94,6 +108,7 @@ namespace RSHCWebApp.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.OfficeLocationID = new SelectList(db.OfficeLocations, "ID", "OfficeValue", rSHCPhone.OfficeLocationID);
+            ViewBag.RSHCEmployeeId = new SelectList(db.RSHCEmployee, "ID", "UserID", rSHCPhone.RSHCEmployeeId);
             return View(rSHCPhone);
         }
 

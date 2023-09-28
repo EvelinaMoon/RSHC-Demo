@@ -29,10 +29,13 @@ namespace RSHCEnteties.Enteties
         [Required]
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [Display(Name = "Onboarding Started")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? OnBoardingStarted { get; set; }
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [Display(Name = "Onboarding Completed")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? OnBoardingCompleted { get; set; }
+        [Index(IsUnique = true)]
         [Display(Name = "RSHC Employee Id")]
         // This will be recognized as FK by NavigationPropertyNameForeignKeyDiscoveryConvention
         [Required]

@@ -18,7 +18,6 @@ namespace RSHCEnteties.Enteties
         [Required(ErrorMessage = "You must provide a phone number")]
         [StringLength(255)]
         [DataType(System.ComponentModel.DataAnnotations.DataType.PhoneNumber)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         public string Phone { get; set; }
 
 

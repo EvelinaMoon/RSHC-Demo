@@ -22,9 +22,11 @@ namespace RSHCEnteties
         public string MiddleName { get; set; }
 
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime AdmittedIn { get; set; }
 
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? AdmittedOut { get; set; }
 
         public RSHCRole UserRole { get; set; } 

@@ -30,8 +30,7 @@ namespace RSHCWebApp
                       "~/bootstrap-table-master/dist/bootstrap-table.min.css"));
 
             bundles.Add(new Bundle("~/bundles/rshcthemescripts").Include(
-                       "~/RshcCustomTheme/vendor/aos/aos.js",
-                       "~/RshcCustomTheme/vendor/bootstrap/js/bootstrap.bundle.min.js",
+                       "~/RshcCustomTheme/vendor/aos/aos.js",                     
                        "~/RshcCustomTheme/vendor/glightbox/js/glightbox.min.js",
                        "~/RshcCustomTheme/vendor/isotope-layout/isotope.pkgd.min.js",
                        "~/RshcCustomTheme/vendor/swiper/swiper-bundle.min.js",
@@ -44,7 +43,10 @@ namespace RSHCWebApp
                        "~/bootstrap-table-master/dist/extensions/export/bootstrap-table-export.min.js"));
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap.bundle.min.js",
+                       "~/Scripts/bootstrap.min.js"
+                       ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

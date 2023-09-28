@@ -68,9 +68,8 @@ namespace RSHCEnteties.DataAccessLayer
         private void ConfigureRSHCPhoneTable(EntityTypeConfiguration<RSHCPhone> modelBuilder)
         {
             modelBuilder.HasKey(buildAction => buildAction.ID);
-            modelBuilder.HasOptional(e => e.RSHCEmployee)
-            .WithOptionalPrincipal()
-            .Map(e => e.MapKey("RSHCEmployeeId"));
+
+            modelBuilder.HasRequired(r => r.RSHCEmployee).WithMany().HasForeignKey(k => k.RSHCEmployeeId).WillCascadeOnDelete(false);
         }
 
         private void ConfigureRSHCOnBoardingTable(EntityTypeConfiguration<RSHCOnBoarding> modelBuilder)

@@ -23,16 +23,19 @@ namespace RSHCEnteties.Enteties
 
         [Required]
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "Offboarding Started")]
 
         public DateTime? OffBoardingStarted { get; set; }
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "Offboarding Complited")]
         public DateTime? OffBoardingCompleted { get; set; }
 
         [Display(Name = "Offboarding Status")]
         public RSHCBoardingStatus BoardingStatus { get; set; }
 
+        [Index(IsUnique = true)]
         // This will be recognized as FK by NavigationPropertyNameForeignKeyDiscoveryConvention
         [ForeignKey("RSHCEmployee")]
         [Required]

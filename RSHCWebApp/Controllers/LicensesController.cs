@@ -60,11 +60,19 @@ namespace RSHCWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,OwnerID,Description,Jurisdiction,License1")] License license)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Licenses.Add(license);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Licenses.Add(license);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                // If we got this far, something failed, redisplay form
+                ModelState.AddModelError("", "Failed to add new record. " + ex.Message);
             }
 
             ViewBag.OwnerID = new SelectList(db.Persons, "UserID", "LastName", license.OwnerID);

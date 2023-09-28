@@ -97,11 +97,19 @@ namespace RSHCWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "UserID,ID,LastName,FirstName,MI,DisplayName,FullName,Initials,OfficeID,ShortName,IsAttorney,IsAuthor,Title,Phone,Fax,EMail,AdmittedIn")] Person person)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Persons.Add(person);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Persons.Add(person);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                // If we got this far, something failed, redisplay form
+                ModelState.AddModelError("", "Failed to add new record. " + ex.Message);
             }
 
             ViewBag.OfficeID = new SelectList(db.OfficeLocations, "ID", "OfficeValue", person.OfficeID);

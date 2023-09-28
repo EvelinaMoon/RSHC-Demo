@@ -54,11 +54,19 @@ namespace RSHCWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ID,AssignedDate,Status,Notes,RSHCEmployeeId,RSHCDeviceId")] RSHCDeviceAssigment rSHCDeviceAssigment)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.RSHCDeviceAssigment.Add(rSHCDeviceAssigment);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.RSHCDeviceAssigment.Add(rSHCDeviceAssigment);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                // If we got this far, something failed, redisplay form
+                ModelState.AddModelError("", "Failed to add new record. " + ex.Message);
             }
 
             ViewBag.RSHCDeviceId = new SelectList(db.RSHCDevice, "ID", "SerialNumber", rSHCDeviceAssigment.RSHCDeviceId);

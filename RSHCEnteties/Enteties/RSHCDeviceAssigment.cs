@@ -15,6 +15,7 @@ namespace RSHCEnteties.Enteties
         public int ID { get; set; }
         [Display(Name = "Assigned Date")]
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime AssignedDate { get; set; }
         public AssigmentStatus Status { get; set; }
         public string Notes { get; set; }

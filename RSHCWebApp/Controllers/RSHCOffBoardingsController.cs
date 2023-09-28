@@ -53,11 +53,19 @@ namespace RSHCWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ID,OffBoardingStarted,OffBoardingCompleted,BoardingStatus,RSHCEmployeeId,RSHCDevicesReturned,O365WipeMobileDevices,O365PasswordChanged,O365ForceLogout,O365ClearContactInfo,O365AddTerminatedTitle,O365RemoveFromGroups,O365SetAutoreply,O365SetHideFromGAL,NetDoctsCheckInAllDocs,NetDocUserGUIDToWorksheet,NetDocCheckDeletedDocuments,NetDoCloseAuthorID,NetDocCheckPersonalMatter,NetDocDeleteMobileDevice,NetDocTermUser,AdobeAcrobatDeleteUser,FaxPlusDeleteUser,NordLayerDeleteUser,ITimekeepDeleteUser,SharefileDisableAccount,SharefileLicensed,SharefileRemoveLicense,SharefileFoldersToSupport,ZoomForwardToReception,PCWiped,KeycardsPhysicallyDisable,ChicagoInformBuilding,PSTArchiveContent,PSTSavedToPSTOrNAS,O365ZoomDeleteUser,DeleteO365ZoomUserBy")] RSHCOffBoarding rSHCOffBoarding)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.RSHCOffBoarding.Add(rSHCOffBoarding);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.RSHCOffBoarding.Add(rSHCOffBoarding);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                // If we got this far, something failed, redisplay form
+                ModelState.AddModelError("", "Failed to add new record. " + ex.Message);
             }
 
             ViewBag.RSHCEmployeeId = new SelectList(db.RSHCEmployee, "ID", "UserID", rSHCOffBoarding.RSHCEmployeeId);

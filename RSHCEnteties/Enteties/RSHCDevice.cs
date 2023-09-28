@@ -32,6 +32,7 @@ namespace RSHCEnteties.Enteties
         public string ComputerName { get; set; }
         [Display(Name = "Build Date")]
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? BuildDate { get; set; }
         public string Notes { get; set; }
         [Display(Name = "Path To Image")]

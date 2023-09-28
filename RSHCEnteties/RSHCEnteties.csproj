@@ -301,35 +301,12 @@
     <Compile Include="Enteties\RSHCDeviceAssigment.cs" />
     <Compile Include="Enteties\RSHCOffBoarding.cs" />
     <Compile Include="Enteties\RSHCOnBoarding.cs" />
+    <Compile Include="Enteties\RSHCPhone.cs" />
     <Compile Include="Enteties\RSHCRole.cs" />
     <Compile Include="LiteraEnteties\License.cs" />
-    <Compile Include="Migrations\202309051832132_5-9-2023.cs" />
-    <Compile Include="Migrations\202309051832132_5-9-2023.designer.cs">
-      <DependentUpon>202309051832132_5-9-2023.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202309052038016_05-09-2023-DateTimeUpdated.cs" />
-    <Compile Include="Migrations\202309052038016_05-09-2023-DateTimeUpdated.designer.cs">
-      <DependentUpon>202309052038016_05-09-2023-DateTimeUpdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202309052041357_05-09-2023-AddedIdentityRoles.cs" />
-    <Compile Include="Migrations\202309052041357_05-09-2023-AddedIdentityRoles.designer.cs">
-      <DependentUpon>202309052041357_05-09-2023-AddedIdentityRoles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202309142031583_RSHC Device added.cs" />
-    <Compile Include="Migrations\202309142031583_RSHC Device added.designer.cs">
-      <DependentUpon>202309142031583_RSHC Device added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202309142057302_RSHC Boarding added.cs" />
-    <Compile Include="Migrations\202309142057302_RSHC Boarding added.designer.cs">
-      <DependentUpon>202309142057302_RSHC Boarding added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202309142123124_RSHC Path to image added.cs" />
-    <Compile Include="Migrations\202309142123124_RSHC Path to image added.designer.cs">
-      <DependentUpon>202309142123124_RSHC Path to image added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202309221937118_22-09-2023 Added Device Name.cs" />
-    <Compile Include="Migrations\202309221937118_22-09-2023 Added Device Name.designer.cs">
-      <DependentUpon>202309221937118_22-09-2023 Added Device Name.cs</DependentUpon>
+    <Compile Include="Migrations\202309282320203_28-09-2023 DB Init Basic Model.cs" />
+    <Compile Include="Migrations\202309282320203_28-09-2023 DB Init Basic Model.designer.cs">
+      <DependentUpon>202309282320203_28-09-2023 DB Init Basic Model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="LiteraEnteties\OfficeLocation.cs" />
@@ -344,26 +321,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202309051832132_5-9-2023.resx">
-      <DependentUpon>202309051832132_5-9-2023.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309052038016_05-09-2023-DateTimeUpdated.resx">
-      <DependentUpon>202309052038016_05-09-2023-DateTimeUpdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309052041357_05-09-2023-AddedIdentityRoles.resx">
-      <DependentUpon>202309052041357_05-09-2023-AddedIdentityRoles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309142031583_RSHC Device added.resx">
-      <DependentUpon>202309142031583_RSHC Device added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309142057302_RSHC Boarding added.resx">
-      <DependentUpon>202309142057302_RSHC Boarding added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309142123124_RSHC Path to image added.resx">
-      <DependentUpon>202309142123124_RSHC Path to image added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202309221937118_22-09-2023 Added Device Name.resx">
-      <DependentUpon>202309221937118_22-09-2023 Added Device Name.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202309282320203_28-09-2023 DB Init Basic Model.resx">
+      <DependentUpon>202309282320203_28-09-2023 DB Init Basic Model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
